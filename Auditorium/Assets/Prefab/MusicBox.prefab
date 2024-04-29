@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 6566161716717147508}
   - component: {fileID: 4772790274547291775}
   - component: {fileID: 245435660698487043}
-  - component: {fileID: 8890834586851119246}
   - component: {fileID: 5074656444070373753}
   m_Layer: 0
   m_Name: MusicBox
@@ -97,7 +96,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a6cf1edc40628422fb649b0c43be3ce3, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -181,22 +180,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &8890834586851119246
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1041260980146528901}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f867296eafb9beb41a1f78f455a362cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _audioSource: {fileID: 0}
-  _offColor: {r: 0, g: 0, b: 0, a: 0}
-  _onColor: {r: 0, g: 0, b: 0, a: 0}
-  _bars: []
 --- !u!114 &5074656444070373753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +201,7 @@ MonoBehaviour:
   - {fileID: 3654266931103552616}
   - {fileID: 906087859374618589}
   - {fileID: 7955663917367900093}
+  nbParticles: 0
 --- !u!1 &1549034693045540424
 GameObject:
   m_ObjectHideFlags: 0
