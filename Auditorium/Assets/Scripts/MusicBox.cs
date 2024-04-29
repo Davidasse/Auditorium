@@ -84,8 +84,6 @@ public class MusicBox : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("rentrée");
-        //nbParticles++;
         _audioSource.volume += _addVolume;
         chrono = 0f;
     }
