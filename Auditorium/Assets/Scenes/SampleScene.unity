@@ -360,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   centerIcon: {fileID: 2800000, guid: 7a9a0dd7570af2745a00bd060fbda302, type: 3}
   outerIcon: {fileID: 2800000, guid: 3044446006d994f4cafbb545084e6e6b, type: 3}
+  _isClicked: 0
 --- !u!4 &1513031196
 Transform:
   m_ObjectHideFlags: 0
@@ -486,7 +487,19 @@ MonoBehaviour:
     m_ActionId: 7de48a29-7c08-44e8-9a67-bf952f101dc5
     m_ActionName: Player/Position[/Mouse/position]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1513031195}
+        m_TargetAssemblyTypeName: MouseManager, Assembly-CSharp
+        m_MethodName: PointerPress
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: eb97c784-c4b5-42f0-96b0-89acbd0bbadc
     m_ActionName: Player/Click[/Mouse/press]
   m_NeverAutoSwitchControlSchemes: 0
