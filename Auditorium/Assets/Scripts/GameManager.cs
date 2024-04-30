@@ -20,7 +20,9 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //On reinitialise le nbBoxFull a chaque debut de comptage pour toujours reprendre de zero
         nbBoxFull = 0;
+        //on demarre la boucle
         foreach (var musicBox in _Box)
         {
            if (musicBox._bars[4].color == musicBox._onColor)
@@ -34,6 +36,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            //s'il y a une decrementation de musicBox, on ré-init le chrono
             chrono = 0;
         }
         if (chrono >= 2)
