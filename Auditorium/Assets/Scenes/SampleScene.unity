@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zone (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2089869334668955604, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
+      propertyPath: m_TagString
+      value: OuterZone
+      objectReference: {fileID: 0}
     - target: {fileID: 3999964566914573260, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 8.11
@@ -316,16 +320,61 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4212759329560784619, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
+      propertyPath: m_TagString
+      value: CenterZone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
---- !u!1 &1401740320 stripped
+--- !u!1 &1513031194
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 2089869334668955604, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
-  m_PrefabInstance: {fileID: 4901202053081471024}
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1513031196}
+  - component: {fileID: 1513031195}
+  m_Layer: 0
+  m_Name: MouseManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1513031195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513031194}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f024443b046f7c0439a3177ae1ac63f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerIcon: {fileID: 2800000, guid: 7a9a0dd7570af2745a00bd060fbda302, type: 3}
+  outerIcon: {fileID: 2800000, guid: 3044446006d994f4cafbb545084e6e6b, type: 3}
+--- !u!4 &1513031196
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1513031194}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.7709262, y: 0.9458275, z: -1.9357074}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1788483232
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,19 +418,7 @@ MonoBehaviour:
       m_Calls: []
   m_ActionEvents:
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401740320}
-        m_TargetAssemblyTypeName: CircleShape, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 332e8769-8832-4c45-8d1f-0ca85b7ad9a7
     m_ActionName: Player/Move[/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
@@ -389,19 +426,7 @@ MonoBehaviour:
     m_ActionId: 6357081b-a3f9-4093-9178-74d6aba9aed8
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1401740320}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_ActionId: 127d12ba-2482-49b8-9b25-b325e7d590f4
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -445,7 +470,19 @@ MonoBehaviour:
     m_ActionId: d98b9894-d529-4a71-bc6b-e9ec8f365403
     m_ActionName: UI/TrackedDeviceOrientation
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1513031195}
+        m_TargetAssemblyTypeName: MouseManager, Assembly-CSharp
+        m_MethodName: PointerMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 7de48a29-7c08-44e8-9a67-bf952f101dc5
     m_ActionName: Player/Position[/Mouse/position]
   - m_PersistentCalls:
@@ -590,13 +627,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zone
       objectReference: {fileID: 0}
+    - target: {fileID: 2089869334668955604, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
+      propertyPath: m_TagString
+      value: OuterZone
+      objectReference: {fileID: 0}
     - target: {fileID: 3999964566914573260, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.79
       objectReference: {fileID: 0}
     - target: {fileID: 3999964566914573260, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.78
+      value: 4.53
       objectReference: {fileID: 0}
     - target: {fileID: 3999964566914573260, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -630,6 +671,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4212759329560784619, guid: fdc94ae052465a544bd19f5531bfea3f, type: 3}
+      propertyPath: m_TagString
+      value: CenterZone
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -645,3 +690,4 @@ SceneRoots:
   - {fileID: 125057899348612225}
   - {fileID: 4901202053081471024}
   - {fileID: 596604730}
+  - {fileID: 1513031196}
