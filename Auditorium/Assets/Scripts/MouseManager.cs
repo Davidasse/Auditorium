@@ -14,6 +14,8 @@ public class MouseManager : MonoBehaviour
     private Vector3 _worldPoint;
     private Ray _ray;
     private CircleShape _zoneToResize = null;
+    private bool isInteracting = false;
+    private AreaEffector2D _zoneEffector;
 
     // Start is called before the first frame update
     void Start()
@@ -30,18 +32,22 @@ public class MouseManager : MonoBehaviour
         {
             Debug.Log($"je dois deplacer {_zone.name}");
             _zone.transform.position = _worldPoint;
+            isInteracting = true;
         }
         if(_isClicked && _zoneToResize!=null)
         {
             //Calcul de la distance entre le pointer et le centre de l'objet avec Vector2.Distance
             float radius =Vector2.Distance(_zoneToResize.transform.position, _worldPoint);
             _zoneToResize.Radius = Mathf.Clamp(radius, 1f, 10f);
+            _zoneEffector.forceMagnitude = _zoneToResize.Radius * 3;
+            isInteracting = true;
 
         }
         if (!_isClicked)
         {
             _zone = null;
             _zoneToResize=null;
+            isInteracting = false;
         }
     }
 
@@ -73,6 +79,8 @@ public class MouseManager : MonoBehaviour
                     Debug.Log("dehors");
                 Cursor.SetCursor(outerIcon, new Vector2(256, 256), CursorMode.Auto);
                 _zoneToResize = hit.collider.GetComponent<CircleShape>();
+                _zoneEffector = hit.collider.GetComponent<AreaEffector2D>();
+
             }            
         }
         else
