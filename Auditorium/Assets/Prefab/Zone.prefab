@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2525609786109935230}
   m_Layer: 0
   m_Name: Zone
-  m_TagString: Untagged
+  m_TagString: OuterZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -263,7 +263,7 @@ GameObject:
   - component: {fileID: 1990401683997059715}
   m_Layer: 0
   m_Name: icon_arrow
-  m_TagString: Untagged
+  m_TagString: CenterZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
