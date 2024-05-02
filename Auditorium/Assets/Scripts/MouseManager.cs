@@ -30,7 +30,7 @@ public class MouseManager : MonoBehaviour
 
         if (_isClicked && _zone!=null)
         {
-            Debug.Log($"je dois deplacer {_zone.name}");
+            //Debug.Log($"je dois deplacer {_zone.name}");
             _zone.transform.position = _worldPoint;
             isInteracting = true;
         }
@@ -55,6 +55,7 @@ public class MouseManager : MonoBehaviour
     {
         //Position en pixel du pointer dans l'ecran
         Vector2 pointerPosition = context.ReadValue<Vector2>();
+        Debug.Log(pointerPosition);
 
         _ray = Camera.main.ScreenPointToRay( pointerPosition );
 
@@ -68,16 +69,16 @@ public class MouseManager : MonoBehaviour
             if (hit.collider.CompareTag("CenterZone"))
                 {
                 // j'ai touché la fleche
-                Debug.Log("dedans");
-                Cursor.SetCursor(centerIcon, new Vector2(256, 256), CursorMode.Auto);
+                //Debug.Log("dedans");
+                Cursor.SetCursor(centerIcon, new Vector2(64, 64), CursorMode.Auto);
                 _zone = hit.collider.transform.parent.gameObject;
 
             }
                 else if (hit.collider.CompareTag("OuterZone"))
                 {
                     // j'ai touché le cercle
-                    Debug.Log("dehors");
-                Cursor.SetCursor(outerIcon, new Vector2(256, 256), CursorMode.Auto);
+                    //Debug.Log("dehors");
+                Cursor.SetCursor(outerIcon, new Vector2(64, 64), CursorMode.Auto);
                 _zoneToResize = hit.collider.GetComponent<CircleShape>();
                 _zoneEffector = hit.collider.GetComponent<AreaEffector2D>();
 
