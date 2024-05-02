@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7667410798927413888}
   - component: {fileID: 6302745653486938871}
   - component: {fileID: 7138352033575047098}
+  - component: {fileID: -6972197214196445302}
   m_Layer: 6
   m_Name: Particule 1
   m_TagString: Untagged
@@ -136,7 +137,7 @@ TrailRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10306, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -225,7 +226,7 @@ TrailRenderer:
     generateLightingData: 0
   m_MinVertexDistance: 0.1
   m_MaskInteraction: 0
-  m_Autodestruct: 1
+  m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
 --- !u!61 &7138352033575047098
@@ -273,6 +274,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &-6972197214196445302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3626126544863502435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06fd3571b224fec43be1c7f39584cfbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _tr: {fileID: 6302745653486938871}
 --- !u!1 &8340038422292166163
 GameObject:
   m_ObjectHideFlags: 0

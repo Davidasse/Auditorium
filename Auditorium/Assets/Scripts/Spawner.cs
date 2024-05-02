@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.ParticleSystem;
 
 public class Spawner : MonoBehaviour
 {
@@ -21,10 +22,25 @@ public class Spawner : MonoBehaviour
     {
         if (canSpawn)
         {
-            //Random.insideUnitCircle => Vector2 (-1,1 ; -1,1)
-            Vector2 spawnPosition = (Vector2)transform.position + Random.insideUnitCircle;
-            GameObject Particles = Instantiate(_Prefab, spawnPosition, Quaternion.identity);
-            Particles.GetComponent<Rigidbody2D>().velocity = transform.right * 10f;
+            Vector2 spawnPosition = (Vector2)transform.position + Random.insideUnitCircle*spawnRadius;
+
+            //on recupere la particule
+            //GameObject Particles = Instantiate(_Prefab, spawnPosition, Quaternion.identity);
+            GameObject particles = ObjectPool.Get();
+
+            if (particles == null)
+            {
+                return;
+            }
+
+            //On active la particule
+            particles.SetActive(true);
+
+            //on teleporte la particule
+            particles.transform.position = spawnPosition;
+
+            //On initialise la particule
+            particles.GetComponent<Rigidbody2D>().velocity = transform.right * 10f;
             canSpawn = false;
         }
         if (!canSpawn)
