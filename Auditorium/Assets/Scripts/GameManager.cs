@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,11 +12,22 @@ public class GameManager : MonoBehaviour
     public float chrono = 0f;
     public int nbBoxFull = 0;
 
+    public UnityEvent LevelSuccess = new UnityEvent();
+    public UnityEvent EcranFin = new UnityEvent();
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        //GameObject[] boxes = GameObject.FindGameObjectsWithTag("OuterZone");
+
+        // en c# les tableau
+    }
+
+    IEnumerator fin()
+    {
+        yield return new WaitForSeconds(3);
+        LevelSuccess.Invoke();
     }
 
     // Update is called once per frame
@@ -31,7 +43,7 @@ public class GameManager : MonoBehaviour
                 nbBoxFull++;
             }
         }
-        if (nbBoxFull >=2 )
+        if (nbBoxFull >= _Box.Length )
         {
             chrono += Time.deltaTime;
         }
@@ -40,9 +52,13 @@ public class GameManager : MonoBehaviour
             //s'il y a une decrementation de musicBox, on ré-init le chrono
             chrono = 0;
         }
+
+        //Si le chrono atteint deux secondes, le joueur a gagné
         if (chrono >= 2)
         {
-            Debug.Log("gagné !");
+            //Debug.Log("gagné !");
+            EcranFin.Invoke();
+            StartCoroutine("fin");
         }
     }
     public void ChangeScene(string sceneName)
