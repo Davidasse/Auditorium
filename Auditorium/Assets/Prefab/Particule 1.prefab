@@ -197,7 +197,7 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 65535
+      ctime1: 33153
       ctime2: 0
       ctime3: 0
       ctime4: 0
@@ -205,8 +205,8 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 32768
-      atime2: 65535
+      atime1: 30647
+      atime2: 32768
       atime3: 0
       atime4: 0
       atime5: 0
