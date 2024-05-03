@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class MusicBox : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class MusicBox : MonoBehaviour
     public float _subVolume = 0.1f;
     public float _addVolume = 0.01f;
     private float chrono = 0f;
+    public AudioMixer mixer;
 
     // Start is called before the first frame update
     void Start()
@@ -79,7 +81,7 @@ public class MusicBox : MonoBehaviour
         {
             _audioSource.volume -= _subVolume*Time.deltaTime;
             
-        }
+        }       
 
     }
     public void OnTriggerEnter2D(Collider2D collision)
@@ -87,4 +89,11 @@ public class MusicBox : MonoBehaviour
         _audioSource.volume += _addVolume;
         chrono = 0f;
     }
+
+    public void SetVolume(float value)
+    {
+        float decibel = Mathf.Log10(value) * 20f;
+        mixer.SetFloat("MasterVolume", decibel);
+    }
+    
 }

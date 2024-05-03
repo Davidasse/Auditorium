@@ -26,7 +26,7 @@ public class MouseManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(_isClicked);
+        //Debug.Log(_isClicked);
 
         if (_isClicked && _zone!=null)
         {
@@ -55,7 +55,7 @@ public class MouseManager : MonoBehaviour
     {
         //Position en pixel du pointer dans l'ecran
         Vector2 pointerPosition = context.ReadValue<Vector2>();
-        Debug.Log(pointerPosition);
+        //Debug.Log(pointerPosition);
 
         _ray = Camera.main.ScreenPointToRay( pointerPosition );
 
